@@ -3,6 +3,10 @@
 
 /* my styling */
 
+.resume {
+  list-style: none;
+}
+
 .skills {
   list-style: none;
   text-align: center;
@@ -15,6 +19,7 @@
 .tools {
   margin-top: 10px;
   list-style: none;
+  text-align: center;
 }
 
 .tools a{
@@ -1316,6 +1321,7 @@ ul.actions {
   cursor: default;
   list-style: none;
   margin-left: -1em;
+  justify-content: center;
   padding-left: 0; }
   ul.actions li {
     padding: 0 0 0 1em;
