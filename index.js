@@ -1,5 +1,7 @@
 const path = require("path");
 
+const mongoose = require("mongoose");
+
 require("dotenv").config();
 
 const express = require("express");
@@ -20,4 +22,13 @@ app.use(mainRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
+mongoose
+  .connect(
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.jqipsao.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+  )
+  .then((result) => {
+    app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
+  })
+  .catch((err) => {
+    console.log(err);
+  });
