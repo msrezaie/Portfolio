@@ -19,8 +19,8 @@
 							<!-- Header -->
 								<header id="header">
 									<ul class="icons">
-										<li><a href="https://github.com/msrezaie" class="icon brands fa-github"><span class="label">github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/msrezaie/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+										<li><a href="https://github.com/msrezaie" target="_blank" class="icon brands fa-github"><span class="label">github</span></a></li>
+										<li><a href="https://www.linkedin.com/in/msrezaie/" target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
 									</ul>
 								</header>
 
@@ -163,8 +163,8 @@
 								<ul class="contact">
 									<li class="icon solid fa-envelope"><a href="mailto:msulaymanr@outlook.com">msulaymanr@outlook.com</a></li>
 									<li class="icon solid fa-phone">(804) 350-1722</li>
-									<li class="icon brands fa-github"><a href="https://github.com/msrezaie">Github</a></li>
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/msrezaie/">LinkedIn</a></li>
+									<li class="icon brands fa-github"><a href="https://github.com/msrezaie" target="_blank">Github</a></li>
+									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/msrezaie/" target="_blank">LinkedIn</a></li>
 								</ul>
 							</section>
 
@@ -172,17 +172,17 @@
 								<header class="major">
 									<h2>Message</h2>
 								</header>
-								<form method="" action="#">
+								<form id="messageForm" method="POST" action="/">
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+											<input type="text" name="name" id="demo-name" value="" placeholder="Name" />
 										</div>
 										<div class="col-6 col-12-xsmall">
-											<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											<input type="email" name="email" id="demo-email" value="" placeholder="Email" />
 										</div>
 										<!-- Break -->
 										<div class="col-12">
-											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="3"></textarea>
+											<textarea name="messageBody" id="demo-message" placeholder="Enter your message" rows="3"></textarea>
 										</div>
 										<!-- Break -->
 										<div class="col-12">
@@ -204,6 +204,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/messageValidate.js"></script>
 
 	</body>
 </html>
