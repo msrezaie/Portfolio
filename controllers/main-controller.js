@@ -15,7 +15,7 @@ const postMessage = (req, res, next) => {
   });
   message
     .save()
-    .then((result) => {
+    .then(() => {
       console.log("Message from visitor Saved!");
       res.redirect("/");
     })
