@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
-
-const messageSchema = Schema({
+const messageSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -14,6 +12,9 @@ const messageSchema = Schema({
   messageBody: {
     type: String,
     required: true,
+  },
+  date: {
+    type: String,
   },
 });
 

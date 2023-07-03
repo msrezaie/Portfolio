@@ -23,9 +23,7 @@ app.use(mainRoutes);
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.jqipsao.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-  )
+  .connect(process.env.URI)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
   })

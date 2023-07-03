@@ -12,6 +12,7 @@ const postMessage = (req, res, next) => {
     name: name,
     email: email,
     messageBody: messageBody,
+    date: Date(8.64e15).toString(),
   });
   message
     .save()
