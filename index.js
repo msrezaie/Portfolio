@@ -3,8 +3,8 @@ require("express-async-errors");
 const mongoose = require("mongoose");
 const express = require("express");
 const mainRoutes = require("./routes/mainRoutes");
-const adminRoutes = require("./routes/adminRoutes");
-const { notFound, errorHandler } = require("./middleware/errorHandler");
+// const adminRoutes = require("./routes/adminRoutes");
+// const { notFound, errorHandler } = require("./middleware/errorHandler");
 
 const app = express();
 
