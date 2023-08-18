@@ -14,10 +14,10 @@ app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.use(mainRoutes);
-app.use(adminRoutes);
+// app.use(adminRoutes);
 
-app.use(errorHandler);
-app.use(notFound);
+// app.use(errorHandler);
+// app.use(notFound);
 
 const PORT = process.env.PORT || 5000;
 
