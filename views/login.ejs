@@ -1,0 +1,28 @@
+<%- include('includes/head.ejs') %>
+
+<div class="inner">
+
+    <section>
+        <header class="major">
+            <h2>Admin Login</h2>
+        </header>
+        <form id="loginForm">
+            <div class="row">
+                <div class="col-2 col-12-xsmall">
+                    <input type="text" name="uname" id="input-uname" placeholder="Username" required />
+                    <br>
+                    <input type="password" name="password" id="input-password" placeholder="Password" required />
+                    <br>
+                    <ul class="actions">
+                        <li><input type="submit" value="Login" class="primary" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+</div>
+
+<script src="assets/js/loginForm.js"></script>
+
+<%- include('includes/end.ejs') %>

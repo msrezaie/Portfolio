@@ -1,0 +1,38 @@
+<%- include('includes/head.ejs') %>
+
+<div class="inner">
+
+    <section>
+        <header class="major">
+            <h2>Admin CRUD</h2>
+        </header>
+        <button type="button" id="logout">logout</button>
+        <form id="adminForm">
+            <div class="row">
+                <div class="col-12-xsmall">
+                    <label for="resume"><h3>resume:</h3></label>
+                    <input type="file" name="resume" id="" />
+                    <a href="" target="_blank">view current</a>
+                    <br>
+                    <label for="emailLink"><h3>email:</h3></label>
+                    <input type="text" name="emailLink" id="" />
+                    <label for="phone"><h3>phone:</h3></label>
+                    <input type="text" name="resume" id="" />
+                    <label for="githubLink"><h3>github:</h3></label>
+                    <input type="text" name="githubLink" id="" />
+                    <label for="linkenLink"><h3>linkedin:</h3></label>
+                    <input type="text" name="linkenLink" id="" />
+                    <br>
+                    <ul class="actions">
+                        <li><input type="submit" value="save" class="primary" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+</div>
+
+<script src="assets/js/adminCrud.js"></script>
+
+<%- include('includes/end.ejs') %>
