@@ -1,9 +1,9 @@
-const form = document.getElementById("messageForm");
+const messageform = document.getElementById("messageForm");
 
-form.addEventListener("submit", (event) => {
+messageform.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const inputs = form.querySelectorAll("input, textarea");
+  const inputs = messageform.querySelectorAll("input, textarea");
   inputs.forEach((input) => (input.style.border = ""));
 
   let hasError = false;
@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
   });
 
   if (!hasError) {
-    form.submit();
+    messageform.submit();
     alert("Thanks for your message, I'll get back to you ASAP!");
   }
 });
