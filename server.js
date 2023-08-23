@@ -3,7 +3,6 @@ require("express-async-errors");
 const mongoose = require("mongoose");
 const express = require("express");
 const cookieParser = require("cookie-parser");
-
 const mainRoutes = require("./routes/mainRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
@@ -14,13 +13,14 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(express.json());
-app.use(express.static("./public"));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use("/uploads", express.static("uploads"));
 
-app.use(mainRoutes);
-app.use(adminRoutes);
-app.use(authRoutes);
+app.use("/", mainRoutes);
+app.use("/admin", adminRoutes);
+app.use("/auth", authRoutes);
 
 app.use(errorHandler);
 app.use(notFound);
