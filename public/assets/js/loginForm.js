@@ -11,6 +11,12 @@ loginForm.addEventListener("submit", async (event) => {
     await axios.post("/auth", { username, password });
     location.reload();
   } catch (error) {
-    console.log(error.response.data.msg);
+    Toastify({
+      text: error.response.data.msg,
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #A594AB, #A594AB)",
+      },
+    }).showToast();
   }
 });
