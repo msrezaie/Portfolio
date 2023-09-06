@@ -21,6 +21,7 @@ const updateProfile = async (req, res) => {
     const profile = await Profile.find();
     if (profile.length < 1) {
       const newProfile = await Profile.create({ resumePath: req.file.path });
+      console.log("profile entry added");
       res.status(201).json({ msg: "profile entry added", newProfile });
     } else {
       const updatedProfile = await Profile.findByIdAndUpdate(
@@ -30,8 +31,8 @@ const updateProfile = async (req, res) => {
         { resumePath: req.file.path },
         { new: true }
       );
-      const result = await fs.unlink(profile[0].resumePath);
-      console.log(result);
+      await fs.unlink(profile[0].resumePath);
+      console.log("profile updated");
       res.status(200).json({ msg: "profile updated", updatedProfile });
     }
   } else {
