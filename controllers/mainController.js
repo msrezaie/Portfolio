@@ -1,5 +1,5 @@
-const Message = require("../models/Message");
 const Profile = require("../models/Profile");
+const sendGrid = require("@sendgrid/mail");
 
 const getHome = async (req, res) => {
   const profile = await Profile.find();
@@ -17,9 +17,23 @@ const getHome = async (req, res) => {
 };
 
 const postMessage = async (req, res) => {
-  await Message.create(req.body);
-  console.log("Message from visitor Saved!");
-  res.redirect("/");
+  try {
+    const { name, email, messageBody } = req.body;
+    sendGrid.setApiKey(process.env.SMTP_API_KEY);
+
+    const emailTemplate = {
+      to: process.env.SMTP_RECEIVER,
+      from: process.env.SMTP_SENDER,
+      subject: `Message from ${name} - (${email})`,
+      text: messageBody,
+    };
+
+    await sendGrid.send(emailTemplate);
+    console.log("email sent");
+    res.redirect("/");
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 module.exports = { getHome, postMessage };
