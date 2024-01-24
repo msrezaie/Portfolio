@@ -1,6 +1,7 @@
 const messageform = document.getElementById("messageForm");
+const emailInput = document.getElementById("email");
 
-messageform.addEventListener("submit", (event) => {
+messageform.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const inputs = messageform.querySelectorAll("input, textarea");
@@ -14,8 +15,14 @@ messageform.addEventListener("submit", (event) => {
     }
   });
 
+  if (!validator.isEmail(emailInput.value)) {
+    emailInput.style.border = "3px solid red";
+    alert("Please provide a valid email!");
+    hasError = true;
+  }
+
   if (!hasError) {
     messageform.submit();
-    alert("Thanks for your message, I'll get back to you ASAP!");
+    alert("Thank you for your message! I will get back to you soon!");
   }
 });
