@@ -18,13 +18,13 @@ const getHome = async (req, res) => {
 
 const postMessage = async (req, res) => {
   try {
-    const { name, email, messageBody } = req.body;
+    const { email, messageBody } = req.body;
     sendGrid.setApiKey(process.env.SMTP_API_KEY);
 
     const emailTemplate = {
       to: process.env.SMTP_RECEIVER,
       from: process.env.SMTP_SENDER,
-      subject: `Message from ${name} - (${email})`,
+      subject: `Message from - ${email}`,
       text: messageBody,
     };
 
